@@ -164,7 +164,7 @@ function AdminExperiences() {
 					</Form.Item>
 
 					<Form.Item name="description" label="Description">
-						<input placeholder="Description" />
+						<textarea placeholder="Description" />
 					</Form.Item>
 
 					<div className="flex justify-end gap-3 ">

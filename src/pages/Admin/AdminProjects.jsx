@@ -159,7 +159,7 @@ function AdminProjects() {
 					</Form.Item>
 
 					<Form.Item name="description" label="Description">
-						<input placeholder="Description" />
+						<textarea placeholder="Description" />
 					</Form.Item>
 
 					<Form.Item name="technologies" label="Technologies">
