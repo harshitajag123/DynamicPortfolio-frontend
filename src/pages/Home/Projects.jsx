@@ -15,17 +15,18 @@ function Projects() {
 
 			<div className="flex py-10 gap-20 sm:flex-col">
 				{/* for selecting period */}
-				<div className="flex flex-col gap-6 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full">
+				<div className="flex   flex-col gap-6 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full ">
 					{projects.map((project, index) => (
 						<div
 							className=" cursor-pointer"
+
 							onClick={() => {
 								setSelectedItemIndex(index);
 							}}>
 							<h1
-								className={`text-xl font-semibold px-4  ${
+								className={`text-xl  font-semibold px-4  ${
 									selectedItemIndex === index
-										? `text-tertiary border-tertiary border-l-4 -ml-[3px] py-3 bg-[#1976545f] `
+										? `text-tertiary border-tertiary border-l-4 -ml-[3px] py-3  bg-[#1976545f] `
 										: ` text-normal`
 								}`}>
 								{project.title}
@@ -35,21 +36,30 @@ function Projects() {
 				</div>
 
 				{/* for display respective content */}
-				<div className="flex item-center justify-center gap-10 sm:flex-col">
+				<div className="flex    item-center justify-center gap-10 sm:flex-col">
 					<img
 						src={projects[selectedItemIndex].image}
 						alt="project"
-						className="w-72 h-60"
+						className="w-72 h-60 sm:h-48"
 					/>
 					<div className="flex flex-col gap-5 ">
-						<h1 className="text-secondary text-2xl">
+						<h1 className="text-secondary font-medium text-2xl">
 							{projects[selectedItemIndex].title}
 						</h1>
 						<p className="text-normal">
 							{projects[selectedItemIndex].description}
 						</p>
+
+						<p className="text-normal">
+							<span className="font-medium text-[#5dc49eef]	">
+								Technologies Used :{" "}
+							</span>
+							{projects[selectedItemIndex].technologies}
+						</p>
+
+						<span className="font-medium text-[#5dc49eef] ">Visit : </span>
 						<a href={projects[selectedItemIndex].link} target="_blank">
-							<p className=" text-[#5dc49eef] font-semibold">
+							<p className=" text-normal font-medium">
 								{projects[selectedItemIndex].link}
 							</p>
 						</a>

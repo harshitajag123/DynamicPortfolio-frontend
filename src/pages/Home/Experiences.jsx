@@ -24,7 +24,7 @@ function Experiences() {
 		<div>
 			<SectionTitle title="Experience" />
 
-			<div className="flex py-10 gap-20 sm:flex-col">
+			<div className="flex  py-10 gap-20 sm:flex-col">
 				{/* for selecting period */}
 				<div className="flex flex-col gap-6 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full">
 					{experience.map((exp, index) => (
@@ -47,8 +47,8 @@ function Experiences() {
 				</div>
 
 				{/* for display respective content */}
-				<div className="flex flex-col gap-5 ">
-					<h1 className="text-secondary text-2xl">
+				<div className="flex w-3/4  flex-col gap-5 ">
+					<h1 className="text-secondary font-medium text-2xl">
 						{experience[selectedItemIndex].title}
 					</h1>
 					<h1 className="text-tertiary text-2xl">

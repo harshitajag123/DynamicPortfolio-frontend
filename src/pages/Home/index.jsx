@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header";
 import { useSelector } from "react-redux";
+import { useRef } from "react";
 
 import Intro from "./Intro";
 import About from "./About";
@@ -13,22 +14,42 @@ import LeftSider from "./LeftSider";
 
 function Home() {
 	const { portfolioData } = useSelector((state) => state.root);
+
+	//const introRef = useRef(null);
+	const headerRef = useRef(null);
+	const aboutRef = useRef(null);
+	const experienceRef = useRef(null);
+	const projectsRef = useRef(null);
+	const certificationsRef = useRef(null);
+	const contactRef = useRef(null);
 	return (
 		<>
 			<Header />
-			
-
 
 			{portfolioData && (
 				<div className="bg-primary px-40 sm:px-5">
-					<Intro />
-					<About />
-					<Experiences />
-					<Projects />
-					<Courses />
-					<Contact />
+					<div>
+						<Intro aboutRef={aboutRef} />
+					</div>
+
+					<div ref={aboutRef}>
+						<About />
+					</div>
+
+					<div ref={experienceRef}>
+						<Experiences />
+					</div>
+					<div ref={projectsRef}>
+						<Projects />
+					</div>
+					<div ref={certificationsRef}>
+						<Courses />
+					</div>
+					<div ref={contactRef}>
+						<Contact />
+					</div>
 					<Footer />
-					<LeftSider />
+					<LeftSider headerRef={headerRef} />
 				</div>
 			)}
 		</>

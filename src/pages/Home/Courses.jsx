@@ -1,12 +1,12 @@
-import React from 'react'
-import SectionTitle from '../../components/SectionTitle';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import SectionTitle from "../../components/SectionTitle";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 function Courses() {
-  const [selectedItemIndex, setSelectedItemIndex] = useState(0);
+	const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 	const { portfolioData } = useSelector((state) => state.root);
-	const {certification} = portfolioData; //here in data we have certification instead of courses so in mapping, courses are changed to certification
-  return (
+	const { certification } = portfolioData; //here in data we have certification instead of courses so in mapping, courses are changed to certification
+	return (
 		<div>
 			<SectionTitle title="Certifications" />
 
@@ -32,17 +32,21 @@ function Courses() {
 				</div>
 
 				{/* for display respective content */}
-				<div className="flex item-center justify-center gap-10 sm:flex-col">
+				<div className="flex   gap-10 sm:flex-col">
 					<div className="flex flex-col gap-5 ">
-						<h1 className="text-secondary text-2xl">
+						<h1 className="text-secondary font-medium text-2xl">
 							{certification[selectedItemIndex].title}
 						</h1>
 
 						<p className="text-normal ">
 							{certification[selectedItemIndex].description}
 						</p>
-						<a href={certification[selectedItemIndex].link} target="_blank">
-							<p className="text-[#5dc49eef] font-semibold ">
+						<span className="font-medium text-[#5dc49eef]">Visit : </span>
+						<a
+							href={certification[selectedItemIndex].link}
+							target="_blank"
+							className="break-words sm:max-w-full w-full">
+							<p className="text-normal  font-medium overflow-hidden sm:overflow-wrap break-words  ">
 								{certification[selectedItemIndex].link}
 							</p>
 						</a>

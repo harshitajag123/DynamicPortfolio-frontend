@@ -122,7 +122,13 @@ textarea{
 }
 
 a{
+  margin-top:-10px;
   color:#50e8ffd7;
+}
+
+a>p:hover{
+  color:#5dc49eef;
+  
 }
 
 /* .ant-modal.wrap{
